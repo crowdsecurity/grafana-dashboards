@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 25,
-  "iteration": 1597756614544,
+  "iteration": 1597760047971,
   "links": [],
   "panels": [
     {
@@ -356,7 +356,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "sum(increase(cs_reader_hits{machine=\"$machine\"}[$__interval]))",
+          "expr": "sum(increase(cs_reader_hits_total{machine=\"$machine\"}[$__interval]))",
           "interval": "",
           "intervalFactor": 2,
           "legendFormat": "",
@@ -441,7 +441,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "sum(increase(cs_parser_hits_ok{machine=\"$machine\"}[$__interval]))",
+          "expr": "sum(increase(cs_parser_hits_ok_total{machine=\"$machine\"}[$__interval]))",
           "interval": "",
           "intervalFactor": 2,
           "legendFormat": "",
@@ -526,7 +526,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "sum(increase(cs_bucket_overflow{machine=\"$machine\"}[$__interval]))",
+          "expr": "sum(increase(cs_bucket_overflowed_total{machine=\"$machine\"}[$__interval]))",
           "interval": "",
           "intervalFactor": 2,
           "legendFormat": "",
@@ -696,7 +696,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "sum(increase(cs_parser_hits_ko{machine=\"$machine\"}[$__interval]))",
+          "expr": "sum(increase(cs_parser_hits_ko_total{machine=\"$machine\"}[$__interval]))",
           "interval": "",
           "intervalFactor": 2,
           "legendFormat": "",
@@ -756,7 +756,7 @@
       "repeatDirection": "v",
       "targets": [
         {
-          "expr": "sum(increase(cs_bucket_overflow{machine=\"$machine\"}[$__interval])) by (name)",
+          "expr": "sum(increase(cs_bucket_overflowed_total{machine=\"$machine\"}[$__interval])) by (name)",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -829,5 +829,5 @@
   "variables": {
     "list": []
   },
-  "version": 8
+  "version": 9
 }
