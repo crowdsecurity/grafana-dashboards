@@ -58,7 +58,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1597760671645,
+  "iteration": 1597762043357,
   "links": [],
   "panels": [
     {
@@ -823,7 +823,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_PROMETHEUS}",
-        "definition": "up{job=~\"crowdsec_.*\"}",
+        "definition": "label_values(up, machine)",
         "hide": 0,
         "includeAll": false,
         "index": -1,
@@ -831,9 +831,9 @@
         "multi": false,
         "name": "machine",
         "options": [],
-        "query": "up{job=~\"crowdsec_.*\"}",
+        "query": "label_values(up, machine)",
         "refresh": 1,
-        "regex": ".*machine=\"([^\"]+).*",
+        "regex": "",
         "skipUrlSync": false,
         "sort": 1,
         "tagValuesQuery": "",
@@ -868,5 +868,5 @@
   "variables": {
     "list": []
   },
-  "version": 9
+  "version": 10
 }
