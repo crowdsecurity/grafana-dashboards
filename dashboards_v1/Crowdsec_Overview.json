@@ -1,20 +1,20 @@
 {
   "__inputs": [
     {
-      "name": "DS_PROMETHEUS",
-      "label": "Prometheus",
-      "description": "",
-      "type": "datasource",
-      "pluginId": "prometheus",
-      "pluginName": "Prometheus"
-    },
-    {
       "name": "DS_WATCHERS",
       "label": "watchers",
       "description": "",
       "type": "datasource",
       "pluginId": "elasticsearch",
       "pluginName": "Elasticsearch"
+    },
+    {
+      "name": "DS_PROMETHEUS",
+      "label": "Prometheus",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "prometheus",
+      "pluginName": "Prometheus"
     }
   ],
   "__requires": [
@@ -58,7 +58,6 @@
   "annotations": {
     "list": [
       {
-        "$$hashKey": "object:836",
         "builtIn": 1,
         "datasource": "-- Grafana --",
         "enable": true,
@@ -124,12 +123,10 @@
       "mappingType": 1,
       "mappingTypes": [
         {
-          "$$hashKey": "object:1594",
           "name": "value to text",
           "value": 1
         },
         {
-          "$$hashKey": "object:1595",
           "name": "range to text",
           "value": 2
         }
@@ -160,7 +157,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "sum(up{job!=\"prometheus\"})",
+          "expr": "sum(up{job=~\"crowdsec_.*\"})",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -175,7 +172,6 @@
       "valueFontSize": "200%",
       "valueMaps": [
         {
-          "$$hashKey": "object:1597",
           "op": "=",
           "text": "N/A",
           "value": "null"
@@ -257,7 +253,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:528",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -266,7 +261,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:529",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -354,7 +348,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:589",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -363,7 +356,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:590",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -451,7 +443,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:742",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -460,7 +451,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:743",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -568,7 +558,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:227",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -577,7 +566,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:228",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -665,7 +653,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:881",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -674,7 +661,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:882",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -763,7 +749,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:419",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -772,7 +757,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:420",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -860,7 +844,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:1025",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -869,7 +852,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:1026",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -957,7 +939,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:1292",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -966,7 +947,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:1293",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1012,5 +992,5 @@
   "variables": {
     "list": []
   },
-  "version": 13
+  "version": 14
 }

@@ -52,7 +52,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1597756553957,
+  "iteration": 1597761999174,
   "links": [],
   "panels": [
     {
@@ -373,7 +373,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(increase(cs_reader_hits{machine=\"$machine\"}[$__interval])) by (source)",
+          "expr": "sum(increase(cs_reader_hits_total{machine=\"$machine\"}[$__interval])) by (source)",
           "interval": "",
           "intervalFactor": 2,
           "legendFormat": "{{source}}",
@@ -468,7 +468,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(increase(cs_parser_hits_ok{machine=\"$machine\"}[$__interval])) by (source)",
+          "expr": "sum(increase(cs_parser_hits_ok_total{machine=\"$machine\"}[$__interval])) by (source)",
           "interval": "",
           "intervalFactor": 2,
           "legendFormat": "{{source}}",
@@ -563,7 +563,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(increase(cs_parser_hits_ko{machine=\"$machine\"}[$__interval])) by (source)",
+          "expr": "sum(increase(cs_parser_hits_ko_total{machine=\"$machine\"}[$__interval])) by (source)",
           "interval": "",
           "intervalFactor": 2,
           "legendFormat": "{{source}}",
@@ -658,7 +658,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(cs_bucket_count{machine=\"$machine\"}) by (name)",
+          "expr": "sum(cs_buckets{machine=\"$machine\"}) by (name)",
           "interval": "",
           "legendFormat": "{{name}}",
           "refId": "A"
@@ -752,7 +752,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(increase(cs_bucket_create{machine=\"$machine\"}[$__interval])) by (name)",
+          "expr": "sum(increase(cs_bucket_created_total{machine=\"$machine\"}[$__interval])) by (name)",
           "interval": "",
           "intervalFactor": 2,
           "legendFormat": "{{name}}",
@@ -846,7 +846,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(increase(cs_bucket_overflow{machine=\"$machine\"}[$__interval])) by (name)",
+          "expr": "sum(increase(cs_bucket_overflowed_total{machine=\"$machine\"}[$__interval])) by (name)",
           "interval": "",
           "intervalFactor": 2,
           "legendFormat": "{{name}}",
@@ -941,7 +941,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(increase(cs_bucket_underflow{machine=\"$machine\"}[$__interval])) by (name)",
+          "expr": "sum(increase(cs_bucket_underflowed_total{machine=\"$machine\"}[$__interval])) by (name)",
           "interval": "",
           "intervalFactor": 2,
           "legendFormat": "{{name}}",
@@ -1046,5 +1046,5 @@
   "variables": {
     "list": []
   },
-  "version": 21
+  "version": 23
 }
