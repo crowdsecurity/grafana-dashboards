@@ -1,4 +1,60 @@
 {
+  "__inputs": [
+    {
+      "name": "DS_WATCHERS",
+      "label": "watchers",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "elasticsearch",
+      "pluginName": "Elasticsearch"
+    },
+    {
+      "name": "DS_PROMETHEUS",
+      "label": "Prometheus",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "prometheus",
+      "pluginName": "Prometheus"
+    }
+  ],
+  "__requires": [
+    {
+      "type": "datasource",
+      "id": "elasticsearch",
+      "name": "Elasticsearch",
+      "version": "1.0.0"
+    },
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "6.7.3"
+    },
+    {
+      "type": "panel",
+      "id": "graph",
+      "name": "Graph",
+      "version": ""
+    },
+    {
+      "type": "datasource",
+      "id": "prometheus",
+      "name": "Prometheus",
+      "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "singlestat",
+      "name": "Singlestat",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "text",
+      "name": "Text",
+      "version": ""
+    }
+  ],
   "annotations": {
     "list": [
       {
@@ -15,12 +71,12 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 21,
+  "id": null,
   "links": [],
   "panels": [
     {
       "content": "\n# Summary\n\n\n\n",
-      "datasource": null,
+      "datasource": "${DS_WATCHERS}",
       "gridPos": {
         "h": 2,
         "w": 9,
@@ -46,7 +102,7 @@
         "#E02F44",
         "#299c46"
       ],
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -128,7 +184,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 1,
       "fill": 1,
       "fillGradient": 0,
@@ -223,7 +279,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 1,
       "fill": 1,
       "fillGradient": 0,
@@ -318,7 +374,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 1,
       "fill": 1,
       "fillGradient": 0,
@@ -410,7 +466,7 @@
     },
     {
       "content": "\n# Details\n\n\n\n",
-      "datasource": null,
+      "datasource": "${DS_WATCHERS}",
       "gridPos": {
         "h": 2,
         "w": 13,
@@ -430,7 +486,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 1,
       "fill": 1,
       "fillGradient": 0,
@@ -528,7 +584,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 1,
       "fill": 1,
       "fillGradient": 0,
@@ -623,7 +679,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 1,
       "fill": 1,
       "fillGradient": 0,
@@ -719,7 +775,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 1,
       "fill": 1,
       "fillGradient": 0,
@@ -814,7 +870,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 1,
       "fill": 1,
       "fillGradient": 0,
