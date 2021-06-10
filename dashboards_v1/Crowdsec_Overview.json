@@ -1,14 +1,6 @@
 {
   "__inputs": [
     {
-      "name": "DS_WATCHERS",
-      "label": "watchers",
-      "description": "",
-      "type": "datasource",
-      "pluginId": "elasticsearch",
-      "pluginName": "Elasticsearch"
-    },
-    {
       "name": "DS_PROMETHEUS",
       "label": "Prometheus",
       "description": "",
@@ -18,12 +10,6 @@
     }
   ],
   "__requires": [
-    {
-      "type": "datasource",
-      "id": "elasticsearch",
-      "name": "Elasticsearch",
-      "version": "1.0.0"
-    },
     {
       "type": "grafana",
       "id": "grafana",
