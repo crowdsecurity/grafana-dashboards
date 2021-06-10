@@ -6,6 +6,11 @@ Grafana dashboards for Crowdsec monitoring using Prometheus
 
 `./dashboards_v2` are compatible for releases `v0.3.0-rc1` and up 
 
+![](https://doc.crowdsec.net/Crowdsec/v0/assets/images/grafana_overview.png)
+
+![](https://doc.crowdsec.net/Crowdsec/v0/assets/images/grafana_insight.png)
+
+![](https://doc.crowdsec.net/Crowdsec/v0/assets/images/grafana_details.png) 
 
 ## Prometheus config
 The dashboards use label to filter on individual machines. It's recommended to follow this config example:
