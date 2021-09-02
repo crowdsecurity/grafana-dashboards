@@ -2,9 +2,11 @@
 Grafana dashboards for Crowdsec monitoring using Prometheus
 
 
-`./dashboards_v1` are compatible for releases `v0.3.0-rc0` and below
+`./dashboards_v1` are compatible for releases `v0.3.0-rc0` and below.
 
-`./dashboards_v2` are compatible for releases `v0.3.0-rc1` and up 
+`./dashboards_v2` are compatible for releases `v0.3.0-rc1`, up to `v1.0.X`.
+
+`./dashboards_v3` are compatible for releases `v1.1.X` and up.
 
 ![](https://doc.crowdsec.net/Crowdsec/v0/assets/images/grafana_overview.png)
 
