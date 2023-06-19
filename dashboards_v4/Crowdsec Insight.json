@@ -804,7 +804,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_PROMETHEUS}",
-        "definition": "label_values(up, machine)",
+        "definition": "label_values(cs_info, instance)",
         "description": null,
         "error": null,
         "hide": 0,
@@ -814,7 +814,7 @@
         "name": "machine",
         "options": [],
         "query": {
-          "query": "label_values(up, machine)",
+          "query": "label_values(cs_info, instance)",
           "refId": "Prometheus-machine-Variable-Query"
         },
         "refresh": 1,

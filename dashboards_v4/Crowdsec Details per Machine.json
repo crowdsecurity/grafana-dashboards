@@ -1474,7 +1474,7 @@
           "type": "prometheus",
           "uid": "${DS_PROMETHEUS}"
         },
-        "definition": "label_values(up, machine)",
+        "definition": "label_values(cs_info, instance)",
         "hide": 0,
         "includeAll": false,
         "label": "machine",
@@ -1482,7 +1482,7 @@
         "name": "machine",
         "options": [],
         "query": {
-          "query": "label_values(up, machine)",
+          "query": "label_values(cs_info, instance)",
           "refId": "Prometheus-machine-Variable-Query"
         },
         "refresh": 1,

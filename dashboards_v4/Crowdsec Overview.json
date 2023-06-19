@@ -149,7 +149,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(up{job=~\"crowdsec.*\"})",
+          "expr": "count(cs_info)",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
