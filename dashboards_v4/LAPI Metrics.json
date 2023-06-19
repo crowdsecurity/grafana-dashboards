@@ -119,7 +119,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "cs_lapi_request_duration_seconds_bucket{endpoint=\"/v1/watchers/login\", machine=\"$lapi\"}",
+          "expr": "cs_lapi_request_duration_seconds_bucket{endpoint=\"/v1/watchers/login\", instance=\"$lapi\"}",
           "format": "heatmap",
           "interval": "",
           "legendFormat": "{{le}}",
@@ -174,7 +174,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "cs_lapi_request_duration_seconds_bucket{endpoint=\"/v1/heartbeat\",machine=\"$lapi\"}",
+          "expr": "cs_lapi_request_duration_seconds_bucket{endpoint=\"/v1/heartbeat\",instance=\"$lapi\"}",
           "format": "heatmap",
           "interval": "",
           "legendFormat": "{{le}}",
@@ -246,7 +246,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "cs_lapi_request_duration_seconds_bucket{endpoint= \"/v1/decisions\", machine=\"$lapi\", method=~\"(GET)|(HEAD)\"}",
+          "expr": "cs_lapi_request_duration_seconds_bucket{endpoint= \"/v1/decisions\", instance=\"$lapi\", method=~\"(GET)|(HEAD)\"}",
           "format": "heatmap",
           "interval": "",
           "legendFormat": "{{le}}",
@@ -304,7 +304,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "cs_lapi_request_duration_seconds_bucket{endpoint= \"/v1/decisions/stream\", machine=\"$lapi\", method=~\"(GET)|(HEAD)\"}",
+          "expr": "cs_lapi_request_duration_seconds_bucket{endpoint= \"/v1/decisions/stream\", instance=\"$lapi\", method=~\"(GET)|(HEAD)\"}",
           "format": "heatmap",
           "interval": "",
           "legendFormat": "{{le}}",
@@ -362,7 +362,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "cs_lapi_request_duration_seconds_bucket{endpoint=~\"/v1/decisions.*\", machine=\"$lapi\", method=\"DELETE\"}",
+          "expr": "cs_lapi_request_duration_seconds_bucket{endpoint=~\"/v1/decisions.*\", instance=\"$lapi\", method=\"DELETE\"}",
           "format": "heatmap",
           "interval": "",
           "legendFormat": "{{le}}",
@@ -434,7 +434,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "cs_lapi_request_duration_seconds_bucket{endpoint=\"/v1/alerts\",machine=\"$lapi\",method=\"POST\"}",
+          "expr": "cs_lapi_request_duration_seconds_bucket{endpoint=\"/v1/alerts\",instance=\"$lapi\",method=\"POST\"}",
           "format": "heatmap",
           "interval": "",
           "legendFormat": "{{le}}",
@@ -492,7 +492,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "cs_lapi_request_duration_seconds_bucket{endpoint=\"/v1/alerts\",machine=\"$lapi\",method=~\"(GET)|(HEAD)\"}",
+          "expr": "cs_lapi_request_duration_seconds_bucket{endpoint=\"/v1/alerts\",instance=\"$lapi\",method=~\"(GET)|(HEAD)\"}",
           "format": "heatmap",
           "interval": "",
           "legendFormat": "{{le}}",
@@ -512,7 +512,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_PROMETHEUS}",
-        "definition": "label_values(cs_info, machine)",
+        "definition": "label_values(cs_info, instance)",
         "description": null,
         "error": null,
         "hide": 0,
@@ -522,7 +522,7 @@
         "name": "lapi",
         "options": [],
         "query": {
-          "query": "label_values(cs_info, machine)",
+          "query": "label_values(cs_info, instance)",
           "refId": "StandardVariableQuery"
         },
         "refresh": 1,

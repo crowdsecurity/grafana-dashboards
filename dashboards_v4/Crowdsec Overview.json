@@ -215,34 +215,34 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(increase(cs_filesource_hits_total[$__interval])) by (machine)",
+          "expr": "sum(increase(cs_filesource_hits_total[$__interval])) by (instance)",
           "interval": "",
           "intervalFactor": 2,
-          "legendFormat": "{{machine}}",
+          "legendFormat": "{{instance}}",
           "refId": "A"
         },
         {
           "exemplar": true,
-          "expr": "sum(increase(cs_journalctlsource_hits_total[$__interval])) by (machine)",
+          "expr": "sum(increase(cs_journalctlsource_hits_total[$__interval])) by (instance)",
           "hide": false,
           "interval": "",
-          "legendFormat": "{{machine}}",
+          "legendFormat": "{{instance}}",
           "refId": "B"
         },
         {
           "exemplar": true,
-          "expr": "sum(increase(cs_cloudwatch_stream_hits_total[$__interval])) by (machine)",
+          "expr": "sum(increase(cs_cloudwatch_stream_hits_total[$__interval])) by (instance)",
           "hide": false,
           "interval": "",
-          "legendFormat": "{{machine}}",
+          "legendFormat": "{{instance}}",
           "refId": "C"
         },
         {
           "exemplar": true,
-          "expr": "sum(increase(cs_syslogsource_hits_total[$__interval])) by (machine)",
+          "expr": "sum(increase(cs_syslogsource_hits_total[$__interval])) by (instance)",
           "hide": false,
           "interval": "",
-          "legendFormat": "{{machine}}",
+          "legendFormat": "{{instance}}",
           "refId": "D"
         }
       ],
@@ -341,10 +341,10 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(increase(cs_parser_hits_total[$__interval])) by (machine)",
+          "expr": "sum(increase(cs_parser_hits_total[$__interval])) by (instance)",
           "interval": "",
           "intervalFactor": 2,
-          "legendFormat": "{{machine}}",
+          "legendFormat": "{{instance}}",
           "refId": "A"
         }
       ],
@@ -443,10 +443,10 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(increase(cs_bucket_overflowed_total[$__interval])) by (machine)",
+          "expr": "sum(increase(cs_bucket_overflowed_total[$__interval])) by (instance)",
           "interval": "",
           "intervalFactor": 2,
-          "legendFormat": "{{machine}}",
+          "legendFormat": "{{instance}}",
           "refId": "A"
         }
       ],
