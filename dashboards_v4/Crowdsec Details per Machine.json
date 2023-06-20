@@ -955,7 +955,8 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "cs_parsing_time_seconds_bucket{instance=\"$instance\", type=\"$datasource_type\", source=\"$source\"}",
+              "exemplar": true,
+              "expr": "sum(rate(cs_parsing_time_seconds_bucket{instance=\"$instance\", type=\"$datasource_type\", source=\"$source\"}[$__rate_interval])) by (le)",
               "format": "heatmap",
               "legendFormat": "{{le}}",
               "range": true,
@@ -963,7 +964,7 @@
             }
           ],
           "title": "Parsing time",
-          "type": "bargauge"
+          "type": "heatmap"
         }
       ],
       "targets": [
@@ -1438,7 +1439,8 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "editorMode": "code",
-              "expr": "cs_bucket_pour_seconds_bucket{instance=\"$instance\", type=\"$datasource_type\", source=\"$source\"}",
+              "exemplar": true,
+              "expr": "sum(rate(cs_bucket_pour_seconds_bucket{instance=\"$instance\", type=\"$datasource_type\", source=\"$source\"}[$__rate_interval])) by (le)",
               "format": "heatmap",
               "legendFormat": "{{le}}",
               "range": true,
@@ -1446,7 +1448,7 @@
             }
           ],
           "title": "Bucket pour time",
-          "type": "bargauge"
+          "type": "heatmap"
         }
       ],
       "targets": [
