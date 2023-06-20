@@ -118,8 +118,8 @@
       "repeatDirection": "h",
       "targets": [
         {
-          "exemplar": false,
-          "expr": "sum(rate(cs_lapi_request_duration_seconds_bucket{endpoint=\"/v1/watchers/login\", instance=\"$lapi\"}[$__rate_interval])) by (le)",
+          "exemplar": true,
+          "expr": "cs_lapi_request_duration_seconds_bucket{endpoint=\"/v1/watchers/login\", machine=\"$lapi\"}",
           "format": "heatmap",
           "interval": "",
           "legendFormat": "{{le}}",
@@ -127,7 +127,7 @@
         }
       ],
       "title": "Agents Login",
-      "type": "heatmap"
+      "type": "bargauge"
     },
     {
       "datasource": "${DS_PROMETHEUS}",
@@ -174,7 +174,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(rate(cs_lapi_request_duration_seconds_bucket{endpoint=\"/v1/watchers/login\"}[$__rate_interval])) by (le)",
+          "expr": "cs_lapi_request_duration_seconds_bucket{endpoint=\"/v1/heartbeat\",machine=\"$lapi\"}",
           "format": "heatmap",
           "interval": "",
           "legendFormat": "{{le}}",
@@ -182,7 +182,7 @@
         }
       ],
       "title": "Heartbeat",
-      "type": "heatmap"
+      "type": "bargauge"
     },
     {
       "collapsed": false,
@@ -246,7 +246,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(rate(cs_lapi_request_duration_seconds_bucket{endpoint= \"/v1/decisions\", instance=\"$lapi\", method=~\"(GET)|(HEAD)\"}[$__rate_interval])) by (le)",
+          "expr": "cs_lapi_request_duration_seconds_bucket{endpoint= \"/v1/decisions\", machine=\"$lapi\", method=~\"(GET)|(HEAD)\"}",
           "format": "heatmap",
           "interval": "",
           "legendFormat": "{{le}}",
@@ -254,7 +254,7 @@
         }
       ],
       "title": "Decisions GET (live)",
-      "type": "heatmap"
+      "type": "bargauge"
     },
     {
       "datasource": "${DS_PROMETHEUS}",
@@ -304,7 +304,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(rate(cs_lapi_request_duration_seconds_bucket{endpoint= \"/v1/decisions/stream\", instance=\"$lapi\", method=~\"(GET)|(HEAD)\"}[$__rate_interval])) by (le)",
+          "expr": "cs_lapi_request_duration_seconds_bucket{endpoint= \"/v1/decisions/stream\", machine=\"$lapi\", method=~\"(GET)|(HEAD)\"}",
           "format": "heatmap",
           "interval": "",
           "legendFormat": "{{le}}",
@@ -312,7 +312,7 @@
         }
       ],
       "title": "Decisions GET (stream)",
-      "type": "heatmap"
+      "type": "bargauge"
     },
     {
       "datasource": "${DS_PROMETHEUS}",
@@ -362,7 +362,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(rate(cs_lapi_request_duration_seconds_bucket{endpoint=~\"/v1/decisions.*\", instance=\"$lapi\", method=\"DELETE\"}[$__rate_interval])) by (le)",
+          "expr": "cs_lapi_request_duration_seconds_bucket{endpoint=~\"/v1/decisions.*\", machine=\"$lapi\", method=\"DELETE\"}",
           "format": "heatmap",
           "interval": "",
           "legendFormat": "{{le}}",
@@ -370,7 +370,7 @@
         }
       ],
       "title": "Decisions DELETE",
-      "type": "heatmap"
+      "type": "bargauge"
     },
     {
       "collapsed": false,
@@ -434,7 +434,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(rate(cs_lapi_request_duration_seconds_bucket{endpoint=\"/v1/alerts\",instance=\"$lapi\",method=\"POST\"}[$__rate_interval])) by (le)",
+          "expr": "cs_lapi_request_duration_seconds_bucket{endpoint=\"/v1/alerts\",machine=\"$lapi\",method=\"POST\"}",
           "format": "heatmap",
           "interval": "",
           "legendFormat": "{{le}}",
@@ -442,7 +442,7 @@
         }
       ],
       "title": "Alerts POST",
-      "type": "heatmap"
+      "type": "bargauge"
     },
     {
       "datasource": "${DS_PROMETHEUS}",
@@ -492,7 +492,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(rate(cs_lapi_request_duration_seconds_bucket{endpoint=\"/v1/alerts\",instance=\"$lapi\",method=~\"(GET)|(HEAD)\"}[$__rate_interval])) by (le)",
+          "expr": "cs_lapi_request_duration_seconds_bucket{endpoint=\"/v1/alerts\",machine=\"$lapi\",method=~\"(GET)|(HEAD)\"}",
           "format": "heatmap",
           "interval": "",
           "legendFormat": "{{le}}",
@@ -500,7 +500,7 @@
         }
       ],
       "title": "Alerts GET",
-      "type": "heatmap"
+      "type": "bargauge"
     }
   ],
   "schemaVersion": 30,
@@ -512,7 +512,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_PROMETHEUS}",
-        "definition": "label_values(cs_info, instance)",
+        "definition": "label_values(cs_info, machine)",
         "description": null,
         "error": null,
         "hide": 0,
@@ -522,7 +522,7 @@
         "name": "lapi",
         "options": [],
         "query": {
-          "query": "label_values(cs_info, instance)",
+          "query": "label_values(cs_info, machine)",
           "refId": "StandardVariableQuery"
         },
         "refresh": 1,
