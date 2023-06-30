@@ -444,7 +444,7 @@
                 "uid": "${DS_PROMETHEUS}"
               },
               "exemplar": true,
-              "expr": "sum(cs_alerts)",
+              "expr": "sum(cs_alerts{instance="$instance"})",
               "interval": "",
               "legendFormat": "",
               "refId": "A"
